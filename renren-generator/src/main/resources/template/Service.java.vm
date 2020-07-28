@@ -1,0 +1,18 @@
+package ${package}.${moduleName}.service;
+
+import com.baomidou.mybatisplus.extension.service.IService;
+import ${mainPath}.common.vo.Page;
+import ${mainPath}.common.vo.PageParam;
+import ${package}.${moduleName}.entity.${className}Entity;
+
+import java.util.Map;
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ */
+public interface ${className}Service extends IService<${className}Entity> {
+
+}
+
