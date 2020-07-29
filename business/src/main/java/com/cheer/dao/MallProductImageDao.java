@@ -1,15 +1,15 @@
 package com.cheer.dao;
 
+import com.cheer.entity.MallProductImageEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.cheer.entity.MemberEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * 用户表
+ * 商品图片表
  * 
  * @author cheer
  */
 @Mapper
-public interface MemberDao extends BaseMapper<MemberEntity> {
+public interface MallProductImageDao extends BaseMapper<MallProductImageEntity> {
 	
 }

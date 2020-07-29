@@ -5,17 +5,16 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 用户表
+ * 商品图片表
  * 
  * @author cheer
  */
 @Data
-@TableName("member")
-public class MemberEntity implements Serializable {
+@TableName("mall_product_image")
+public class MallProductImageEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -25,17 +24,21 @@ public class MemberEntity implements Serializable {
 	@TableId
 	private Long id;
 	/**
-	 * 微信openid
+	 * 商品id
 	 */
-	private String openId;
+	private Long productId;
 	/**
-	 * 头像地址
+	 * 图片地址
 	 */
-	private String headIcon;
+	private String imageUrl;
 	/**
-	 * 消耗的积分
+	 * 图片类型
 	 */
-	private BigDecimal consumeCredit;
+	private Integer imageType;
+	/**
+	 * 排序
+	 */
+	private Long sort;
 	/**
 	 * 
 	 */
