@@ -3,6 +3,7 @@ package com.cheer.entity;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.math.BigDecimal;
 import java.io.Serializable;
@@ -15,13 +16,11 @@ import java.util.Date;
  */
 @Data
 @TableName("mall_product")
+@Accessors(chain = true)
 public class MallProductEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * 
-	 */
 	@TableId
 	private Long id;
 	/**
@@ -29,7 +28,7 @@ public class MallProductEntity implements Serializable {
 	 */
 	private String number;
 	/**
-	 * 
+	 * 商品类型
 	 */
 	private Integer type;
 	/**
@@ -68,17 +67,11 @@ public class MallProductEntity implements Serializable {
 	 * 商品上架状态
 	 */
 	private Integer publishStatus;
-	/**
-	 * 
-	 */
+
 	private Integer isDeleted;
-	/**
-	 * 
-	 */
+
 	private Date createTime;
-	/**
-	 * 
-	 */
+
 	private Date updateTime;
 
 }

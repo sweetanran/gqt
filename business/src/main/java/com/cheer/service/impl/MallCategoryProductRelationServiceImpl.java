@@ -5,9 +5,11 @@ import com.cheer.dao.MallCategoryProductRelationDao;
 import com.cheer.dto.MallCategoryProductDTO;
 import com.cheer.entity.MallCategoryProductRelationEntity;
 import com.cheer.service.MallCategoryProductRelationService;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service("mallCategoryProductRelationService")
@@ -41,6 +43,18 @@ public class MallCategoryProductRelationServiceImpl extends ServiceImpl<MallCate
     }
 
     @Override
+    public void deleteByProductId(Long productId) {
+        mallCategoryProductRelationDao.deleteByProductId(productId);
+    }
+
+    @Override
+    public void deleteByProductIds(List<Long> productIds) {
+        if(CollectionUtils.isNotEmpty(productIds)){
+            mallCategoryProductRelationDao.deleteByProductIds(productIds);
+        }
+    }
+
+    @Override
     public void updateSort(Long categoryId, Long productId, Long sort) {
         MallCategoryProductRelationEntity relation = new MallCategoryProductRelationEntity()
                 .setSort(sort);
@@ -50,6 +64,20 @@ public class MallCategoryProductRelationServiceImpl extends ServiceImpl<MallCate
     @Override
     public List<MallCategoryProductRelationEntity> listByCategoryId(Long categoryId) {
         return mallCategoryProductRelationDao.selectListByCategoryId(categoryId);
+    }
+
+    @Override
+    public List<MallCategoryProductRelationEntity> listByProductIds(List<Long> productIds) {
+        if (CollectionUtils.isEmpty(productIds)) {
+            return new ArrayList<>();
+        }
+
+        return mallCategoryProductRelationDao.selectListByProductIds(productIds);
+    }
+
+    @Override
+    public List<MallCategoryProductRelationEntity> listByProductId(Long productId) {
+        return mallCategoryProductRelationDao.selectListByProductId(productId);
     }
 
 }

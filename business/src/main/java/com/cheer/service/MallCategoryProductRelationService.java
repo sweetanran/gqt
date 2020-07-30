@@ -29,6 +29,16 @@ public interface MallCategoryProductRelationService extends IService<MallCategor
     void deleteByCategoryIds(List<Long> categoryIds);
 
     /**
+     * 刪除商品的分类关联
+     */
+    void deleteByProductId(Long productId);
+
+    /**
+     * 刪除商品的分类关联
+     */
+    void deleteByProductIds(List<Long> productIds);
+
+    /**
      * 修改分类下商品的排序
      */
     void updateSort(Long categoryId, Long productId, Long sort);
@@ -37,6 +47,16 @@ public interface MallCategoryProductRelationService extends IService<MallCategor
      * 查询分类id下的分类与商品关联
      */
     List<MallCategoryProductRelationEntity> listByCategoryId(Long categoryId);
+
+    /**
+     * 查询商品集合关联的分类
+     */
+    List<MallCategoryProductRelationEntity> listByProductIds(List<Long> productIds);
+
+    /**
+     * 查询商品关联的分类
+     */
+    List<MallCategoryProductRelationEntity> listByProductId(Long productId);
 
 }
 

@@ -51,6 +51,7 @@ public interface MallCategoryService extends IService<MallCategoryEntity> {
      * 查询所有分类简要信息
      */
     List<MallCategorySimpleVO> listAllSimply();
+
 }
 
 

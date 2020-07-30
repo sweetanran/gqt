@@ -141,4 +141,5 @@ public class MallCategoryServiceImpl extends ServiceImpl<MallCategoryDao, MallCa
                         .setName(categoryEntity.getName()))
                 .collect(Collectors.toList());
     }
+
 }

@@ -28,6 +28,16 @@ public interface MallCategoryProductRelationDao extends BaseMapper<MallCategoryP
                 .eq("product_id", productId));
     }
 
+    default void deleteByProductId(Long productId) {
+        delete(new QueryWrapper<MallCategoryProductRelationEntity>()
+                .eq("product_id", productId));
+    }
+
+    default void deleteByProductIds(List<Long> productIds) {
+        delete(new QueryWrapper<MallCategoryProductRelationEntity>()
+                .in("product_id", productIds));
+    }
+
     default void updateByCategoryIdAndProductId(Long categoryId, Long productId, MallCategoryProductRelationEntity relation) {
         update(relation, new QueryWrapper<MallCategoryProductRelationEntity>()
                 .eq("category_id", categoryId)
@@ -45,6 +55,16 @@ public interface MallCategoryProductRelationDao extends BaseMapper<MallCategoryP
                 .eq("category_id", categoryId)
                 .eq("product_id", productId)
                 .last("limit 1"));
+    }
+
+    default List<MallCategoryProductRelationEntity> selectListByProductIds(List<Long> productIds) {
+        return selectList(new QueryWrapper<MallCategoryProductRelationEntity>()
+                .in("product_id", productIds));
+    }
+
+    default List<MallCategoryProductRelationEntity> selectListByProductId(Long productId) {
+        return selectList(new QueryWrapper<MallCategoryProductRelationEntity>()
+                .eq("product_id", productId));
     }
 
 }

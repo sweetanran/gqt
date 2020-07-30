@@ -14,3 +14,6 @@ server:
 weixin:
   appid: wxe66a4e8c467b3e00
   secret: 33daf9d927d0ca8563acc43b8626d41c
+
+image:
+  url: asd

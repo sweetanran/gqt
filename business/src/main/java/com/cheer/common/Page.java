@@ -41,11 +41,11 @@ public class Page<T> {
     /**
      * 分页
      */
-    public Page(IPage page) {
-        this.content = page.getRecords();
+    public Page(IPage page, List<T> content) {
         this.total = page.getTotal();
         this.pageSize = (int) page.getSize();
         this.pageNum = (int) page.getCurrent();
         this.pages = (int) page.getPages();
+        this.content = content;
     }
 }
