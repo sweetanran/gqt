@@ -1,19 +1,20 @@
 package com.cheer.service.impl;
 
-import org.springframework.stereotype.Service;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.cheer.common.vo.Page;
-import com.cheer.common.vo.PageParam;
-import com.cheer.common.utils.PageQuery;
-
 import com.cheer.dao.MallShopDao;
 import com.cheer.entity.MallShopEntity;
 import com.cheer.service.MallShopService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service("mallShopService")
 public class MallShopServiceImpl extends ServiceImpl<MallShopDao, MallShopEntity> implements MallShopService {
 
+    @Autowired
+    private MallShopDao mallShopDao;
 
+    @Override
+    public MallShopEntity getByPhone(String phone) {
+        return mallShopDao.selectOneByPhone(phone);
+    }
 }

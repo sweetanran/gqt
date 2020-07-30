@@ -1,11 +1,10 @@
 package com.cheer.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.cheer.common.vo.Page;
-import com.cheer.common.vo.PageParam;
 import com.cheer.entity.MallProductEntity;
+import com.cheer.vo.MallProductSimpleVO;
 
-import java.util.Map;
+import java.util.List;
 
 /**
  * 商品表
@@ -13,6 +12,8 @@ import java.util.Map;
  * @author cheer
  */
 public interface MallProductService extends IService<MallProductEntity> {
+
+    List<MallProductSimpleVO> listProductSimpleByIds(List<Long> ids);
 
 }
 

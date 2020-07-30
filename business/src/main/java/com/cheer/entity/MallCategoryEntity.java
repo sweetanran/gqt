@@ -3,6 +3,7 @@ package com.cheer.entity;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -14,13 +15,11 @@ import java.util.Date;
  */
 @Data
 @TableName("mall_category")
+@Accessors(chain = true)
 public class MallCategoryEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * 
-	 */
 	@TableId
 	private Long id;
 	/**
@@ -30,22 +29,16 @@ public class MallCategoryEntity implements Serializable {
 	/**
 	 * 是否显示
 	 */
-	private Integer showStatus;
+	private Boolean showStatus;
 	/**
 	 * 排序
 	 */
 	private Long sort;
-	/**
-	 * 
-	 */
+
 	private Integer isDeleted;
-	/**
-	 * 
-	 */
+
 	private Date createTime;
-	/**
-	 * 
-	 */
+
 	private Date updateTime;
 
 }
